@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput({ addGuess }) {
+function GuessInput({ addGuess, disabled }) {
   const [guess, setGuess] = React.useState("");
 
   function onChangeHandler(event) {
@@ -24,6 +24,8 @@ function GuessInput({ addGuess }) {
         value={guess}
         onChange={onChangeHandler}
         pattern="[a-zA-Z]{5}" // minLength using pattern
+        disabled={disabled}
+        maxLength="5"
       />
       <div className="help-text">Introduce a 5 character word</div>
     </form>
